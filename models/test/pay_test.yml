@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: pay_test_sustomers
+    columns: 
+      - name: ID
+        tests:
+          - unique
+          - not_null
+      - name: GENDER
+        tests:
+           - accepted_values:
+              values:
+                - male
+                - female
+
+  - name: pay_test_orders
+    columns:
+      - name: ID
+        tests:
+          - unique
+          - not_null
