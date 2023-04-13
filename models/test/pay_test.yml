@@ -13,10 +13,22 @@ models:
               values:
                 - male
                 - female
-
+                
   - name: pay_test_orders
     columns:
       - name: ID
         tests:
           - unique
           - not_null
+
+  - name: duplicados
+    columns:
+      - name: ID
+        tests:
+          - name: check_for_duplicates
+            severity: ERROR
+            query: >
+              SELECT COUNT(*) cnt
+              FROM {{ ref('pay_test_sustomers') }}
+              GROUP BY 1
+              HAVING COUNT(*) > 1;
