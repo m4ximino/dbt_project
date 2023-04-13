@@ -37,3 +37,8 @@ models:
       +materialized: table
     test:
       +materialized: view
+  pay_test:
+    core:
+      +materialized: table
+    test:
+      +materialized: view
