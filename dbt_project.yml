@@ -42,3 +42,8 @@ models:
       +materialized: table
     test:
       +materialized: view
+  covid:
+    core:
+      +materialized: table
+    test:
+      +materialized: view
